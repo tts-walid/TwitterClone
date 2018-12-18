@@ -29,10 +29,8 @@ class TweetsController < ApplicationController
     respond_to do |format|
       if @tweet.save
         format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
-        format.json { render :show, status: :created, location: @tweet }
       else
         format.html { render :new }
-        format.json { render json: @tweet.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +41,8 @@ class TweetsController < ApplicationController
     respond_to do |format|
       if @tweet.update(tweet_params)
         format.html { redirect_to @tweet, notice: 'Tweet was successfully updated.' }
-        format.json { render :show, status: :ok, location: @tweet }
       else
         format.html { render :edit }
-        format.json { render json: @tweet.errors, status: :unprocessable_entity }
       end
     end
   end
