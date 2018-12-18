@@ -13,6 +13,9 @@ class EpicenterController < ApplicationController
   def show_user
     @user = User.find(params[:id])
   end
+  def tag_tweets
+    @tag = Tag.find(params[:id])
+end
 
   def now_following
     # We are adding the user.id of the user you want to 
